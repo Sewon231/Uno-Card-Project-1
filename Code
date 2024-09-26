@@ -1,0 +1,67 @@
+// ********** Starter Code *************
+
+import {UnoCard} from "https://adamprawitz.codehs.me/UnoCard.js";
+    
+// constants
+const TABLE_SIZE = 500;
+const CARD_WIDTH = TABLE_SIZE / 4;
+const CARD_HEIGHT = TABLE_SIZE / 2.5;
+const CARD_LIFT = TABLE_SIZE / 100;
+const BUFFER = TABLE_SIZE / 100;
+const SHADOW_BUFFER = 2;
+
+const SMALL_FONT = CARD_HEIGHT / 10 + "pt Trebuchet MS";
+const SMALL_SHADOW_FONT = CARD_HEIGHT / 10 + "pt Trebuchet MS";
+const BIG_FONT = CARD_HEIGHT / 5 + "pt Trebuchet MS";
+const BIG_SHADOW_FONT = CARD_HEIGHT / 5 + "pt Trebuchet MS";
+
+
+// *************************************
+
+// Your code goes below this line
+//Start all functions.
+function start(){
+    setTable();
+    drawcard();
+}
+// This function is setup the background.
+function setTable(){
+    setSize(TABLE_SIZE, TABLE_SIZE)
+    let rect = new Rectangle(getWidth(), getHeight());
+    add(rect);
+}
+//The function of repeating pulling out a card and the appearance of the card few times.
+function drawcard(){
+    let cardTop = new UnoCard("Red", "+2",CARD_WIDTH, CARD_HEIGHT);
+    cardTop.setPosition(getWidth()/2 - CARD_WIDTH/2, 0);
+    cardTop.draw();
+    let i=0;
+    let card1 = new UnoCard("Yellow", "5",CARD_WIDTH,CARD_HEIGHT);
+    card1.setPosition(i, getHeight() - CARD_HEIGHT);
+    card1.draw();
+    i += CARD_WIDTH/2;
+    let card2 = new UnoCard("Yellow", "4",CARD_WIDTH,CARD_HEIGHT);
+    card2.setPosition(i, getHeight() - CARD_HEIGHT);
+    card2.draw();
+    i += CARD_WIDTH/2;
+    let card3 = new UnoCard("Blue", "3",CARD_WIDTH,CARD_HEIGHT);
+    card3.setPosition(i, getHeight() - CARD_HEIGHT);
+    card3.draw();
+    i += CARD_WIDTH/2;
+    let card4 = new UnoCard("Yellow", "9",CARD_WIDTH,CARD_HEIGHT);
+    card4.setPosition(i, getHeight() - CARD_HEIGHT);
+    card4.draw();
+    i += CARD_WIDTH/2;
+    let card5 = new UnoCard("Yellow", "7",CARD_WIDTH,CARD_HEIGHT);
+    card5.setPosition(i, getHeight() - CARD_HEIGHT);
+    card5.draw();
+    i += CARD_WIDTH/2;
+    let card6 = new UnoCard("Red", "0",CARD_WIDTH,CARD_HEIGHT);
+    card6.setPosition(i, getHeight() - CARD_HEIGHT);
+    card6.draw();
+    i += CARD_WIDTH/2;
+    let card7 = new UnoCard("Red", "7",CARD_WIDTH,CARD_HEIGHT);
+    card7.setPosition(i, getHeight() - CARD_HEIGHT);
+    card7.draw();
+    i += CARD_WIDTH/2;
+}
